@@ -1,0 +1,12 @@
+.container {
+    object-fit: fill;
+}
+
+.card-img-top {
+    height: 250px;
+}
+
+.banner-top {
+    width: 1350px;
+    box-sizing: 300px;
+}
