@@ -1,7 +1,17 @@
+using LojaDaMarcela.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Adicionar o serviço de conexão com o banco de dados
+string conexao = builder.Configuration.GetConnectionString("LojaConexao");
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseSqlServer(conexao)
+);
+
 
 var app = builder.Build();
 
