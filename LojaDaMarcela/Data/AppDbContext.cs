@@ -12,9 +12,9 @@ namespace LojaDaMarcela.Data;
 
       }
 
-      public DbSet<Categoria> categorias{ get; set; }
-      public DbSet<Produtos> produtos { get; set; }
-      public DbSet<ProdutosFoto> ProdutoFotos { get; set; }
+      public DbSet<Categoria> Categorias{ get; set; }
+      public DbSet<Produto> Produtos { get; set; }
+      public DbSet<ProdutoFoto> ProdutoFotos { get; set; }
     }
         
     

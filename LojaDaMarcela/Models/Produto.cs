@@ -1,12 +1,10 @@
-
-
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LojaDaMarcela.Models;
 
 [Table("Produto")]
-public class Produtos
+public class Produto
 {
     [Key]
     public int Id { get; set; }
@@ -28,13 +26,20 @@ public class Produtos
     [Required(ErrorMessage = "Por favor, informe a quantidade em estoque")]
     [Range(0, int.MaxValue)]
     [Display(Name = "Quantidade em estoque")]
-    public int QtedeEstoque { get; set; }
+    public int QtdeEstoque { get; set; }
 
     [Range(0, double.MaxValue)]
     [Display(Name ="Valor de custo")]
     [Column(TypeName ="numeric(10,2)")]
     public decimal ValorCusto { get; set; }
+
+    [Range(0, double.MaxValue)]
+    [Display(Name ="Valor de venda")]
+    [Column(TypeName ="numeric(10,2)")]
     public decimal ValorVenda { get; set; }
-    public bool Destaque { get; set; }
+
+    public bool Destaque { get; set; } = false;
+
+    public List<ProdutoFoto> Fotos { get; set; }
 
 }

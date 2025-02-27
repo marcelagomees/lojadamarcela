@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LojaDaMarcela.Models;
 
-[Table("ProdutosFoto")]
-public class ProdutosFoto
+[Table("ProdutoFoto")]
+public class ProdutoFoto
 {
     [Key]
     public int Id { get; set; }
@@ -12,10 +12,13 @@ public class ProdutosFoto
     [Display(Name = "Produtos")]
     [Required(ErrorMessage = "Por favor, informe o Produto")]
     public int ProdutoId { get; set; }
-    [ForeignKey("ProdutosId")]
-    public Produtos Produtos { get; set; }
+    [ForeignKey("ProdutoId")]
+    public Produto Produto { get; set; }
 
     [Required(ErrorMessage = "Por favor, informe a foto")]
-    [StringLength(100, ErrorMessage = "A descrição deve possuir 100 caracteres")]
-    public int MyProperty { get; set; }
+    [StringLength(200)]
+    public string Foto { get; set; }
+
+    [StringLength(100)]
+    public string Descricao { get; set; }
 }
