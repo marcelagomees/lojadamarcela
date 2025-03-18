@@ -10,7 +10,7 @@
     <title>GStore - @ViewData["Title"]</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/admin.css">
-    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/styles.css">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     @await RenderSectionAsync("Styles", required: false)
 </head>
@@ -89,6 +89,7 @@
         crossorigin="anonymous"></script>
     <script src="~/js/admin.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <partial name="_Notification"></partial>
 </body>
 
 </html>
