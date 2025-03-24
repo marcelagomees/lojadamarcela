@@ -6,7 +6,7 @@
 
 <h1 class="my-4">Categorias</h1>
 
-<a asp-controller="Categorias"asp-action="Create" class="btn btn-primary mb-4">
+<a asp-controller="Categorias" asp-action="Create" class="btn btn-primary mb-4">
     <i class="fas fa-add me-1"></i>Adicionar
 </a>
 
@@ -21,14 +21,14 @@
     <tbody>
         @foreach (Categoria categoria in Model)
         {
-        <tr>
-            <td>@categoria.Nome</td>
-            <td>
-                <a href="#" title="Alterar"><i class="fas fa-edit"></i></a>
-                <a href="#" title="Detalhes"><i class="fas fa-search"></i></a>
-                <a href="#" title="Excluir"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
+            <tr>
+                <td>@categoria.Nome</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@categoria.Id" title="Alterar"><i class="fas fa-edit"></i></a>
+                    <a asp-action="Details" asp-route-id="@categoria.Id" title="Detalhes"><i class="fas fa-search"></i></a>
+                    <a asp-action="Delete" asp-route-id="@categoria.Id" title="Excluir"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
