@@ -7,10 +7,8 @@ namespace LojaDaMarcela.Data;
 
 public class AppDbContext : IdentityDbContext
 {
-  public AppDbContext(DbContextOptions<AppDbContext> options)
-   : base(options)
+  public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
   {
-
   }
 
   public DbSet<Categoria> Categorias { get; set; }
@@ -18,20 +16,20 @@ public class AppDbContext : IdentityDbContext
   public DbSet<ProdutoFoto> ProdutoFotos { get; set; }
   public DbSet<Usuario> Usuario { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        base.OnModelCreating(builder);
+  protected override void OnModelCreating(ModelBuilder builder)
+  {
+    base.OnModelCreating(builder);
 
-        builder.Entity<IdentityUser>().ToTable("Usuario");
-        builder.Entity<IdentityRole>().ToTable("Perfil");
-        builder.Entity<IdentityUserRole<string>>().ToTable("UsuarioPerfil");
-        builder.Entity<IdentityUserClaim<string>>().ToTable("UsuarioRegras");
-        builder.Entity<IdentityUserToken<string>>().ToTable("UsuarioToken");
-        builder.Entity<IdentityUserLogin<string>>().ToTable("UsuarioLogin");
-        builder.Entity<IdentityRoleClaim<string>>().ToTable("PerfilRegras");
+    builder.Entity<IdentityUser>().ToTable("Usuario");
+    builder.Entity<IdentityRole>().ToTable("Perfil");
+    builder.Entity<IdentityUserRole<string>>().ToTable("UsuarioPerfil");
+    builder.Entity<IdentityUserClaim<string>>().ToTable("UsuarioRegras");
+    builder.Entity<IdentityUserToken<string>>().ToTable("UsuarioToken");
+    builder.Entity<IdentityUserLogin<string>>().ToTable("UsuarioLogin");
+    builder.Entity<IdentityRoleClaim<string>>().ToTable("PerfilRegras");
 
-        AppDbSeed seed = new(builder);
-    }
+    AppDbSeed seed = new(builder);
+  }
 
 }
 
