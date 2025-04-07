@@ -14,7 +14,7 @@ public class AppDbContext : IdentityDbContext
   public DbSet<Categoria> Categorias { get; set; }
   public DbSet<Produto> Produtos { get; set; }
   public DbSet<ProdutoFoto> ProdutoFotos { get; set; }
-  public DbSet<Usuario> Usuario { get; set; }
+  public DbSet<Usuario> Usuarios { get; set; }
 
   protected override void OnModelCreating(ModelBuilder builder)
   {
